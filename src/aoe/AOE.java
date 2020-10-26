@@ -1,29 +1,42 @@
 
 package aoe;
 
+import static aoe.Civilizaciones.*;
 import aoe.Edificios.*;
+import aoe.Hilos.Reponedor;
 import aoe.Unidades.*;
-
+import aoe.Utils.Temporizador;
 /**
  *
  * @author Andrés
  */
 public class AOE {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        Civilizacion espana = new Civilizacion(0,ESPANA);
+        Civilizacion vikinga = new Civilizacion(0,VIKINGA);
         MinaOro minaEspanol = new MinaOro();
-        Carpinteria carpinteriaEspanol= new Carpinteria();
         MinaOro minaVikinga = new MinaOro();
+        Carpinteria carpinteriaEspanol= new Carpinteria();
         Carpinteria carpinteriaVikinga= new Carpinteria();
+        
         int aldeanoEspanol=100;
         int aldeanoVikingo=100;
         
-        minaEspanol.rellenarMinaAldeanos();
-        minaVikinga.rellenarMinaAldeanos();
-        System.out.println("");
+        minaEspanol=minaEspanol.rellenarMinaAldeanos();
+        aldeanoEspanol=aldeanoEspanol-10;
+        minaVikinga=minaVikinga.rellenarMinaAldeanos();
+        aldeanoVikingo=aldeanoVikingo-10;
+        System.out.println("Se han llenado las minas");
+        
+        carpinteriaEspanol=carpinteriaEspanol.rellenarCarpinteriaAldeanos();
+        aldeanoEspanol=aldeanoEspanol-16;
+        carpinteriaVikinga=carpinteriaVikinga.rellenarCarpinteriaAldeanos();
+        aldeanoVikingo=aldeanoVikingo-16;
+        System.out.println("Se han llenado las carpinterias");
+        
+        Temporizador temporizador= new Temporizador(minaEspanol,carpinteriaEspanol);
+        
         
     }
     

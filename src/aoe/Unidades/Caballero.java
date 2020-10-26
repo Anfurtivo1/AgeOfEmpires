@@ -12,7 +12,14 @@ public class Caballero extends Unidades{
         super(vida);
         this.nivelAtaque = nivelAtaque;
     }
-    
+
+    public int getNivelAtaque() {
+        return nivelAtaque;
+    }
+
+    public void setNivelAtaque(int nivelAtaque) {
+        this.nivelAtaque = nivelAtaque;
+    }
     
     
 }
