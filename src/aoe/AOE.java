@@ -35,7 +35,7 @@ public class AOE {
         aldeanoVikingo=aldeanoVikingo-16;
         System.out.println("Se han llenado las carpinterias");
         
-        Temporizador temporizador= new Temporizador(minaEspanol,carpinteriaEspanol);
+        Temporizador temporizador= new Temporizador(minaEspanol,carpinteriaEspanol,minaVikinga,carpinteriaVikinga);
         
         
     }
